@@ -1,0 +1,109 @@
+#hamburger {
+  display: block;
+}
+
+ul.menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+#ch-menu:checked ~ ul.menu {
+  display: block;
+  z-index: 2;
+  position: absolute;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-animation-name: aparitie_meniu_p;
+          animation-name: aparitie_meniu_p;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+#ch-menu:checked + ul.menu > li ul > * {
+  position: relative;
+  z-index: 200;
+}
+
+#ch-menu:checked + ul.menu > li > div, #ch-menu:checked + ul.menu > li > a {
+  z-index: 2;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-name: aparitie_meniu_p_btn;
+          animation-name: aparitie_meniu_p_btn;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+nav ul.menu li {
+  width: 100%;
+}
+
+nav ul.menu > li ul {
+  position: absolute;
+  width: 100%;
+  z-index: 200;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+nav ul.menu > li:hover > ul {
+  z-index: 200;
+  -webkit-animation: none;
+          animation: none;
+}
+
+.liAcasa {
+  text-align: center;
+}
+
+.liAcasa:hover .acasa {
+  color: #1D1B5C;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+}
+
+b.acasa {
+  display: none;
+}
+
+@-webkit-keyframes aparitie_meniu_p {
+  0% {
+    -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(#0000), color-stop(40%, #000));
+    -webkit-mask-image: linear-gradient(to top, #0000 0%, #000 40%);
+    -webkit-mask-size: 100% 250%;
+    -webkit-mask-origin: content-box;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 0% 100%;
+  }
+  100% {
+    -webkit-mask-position: 0 0;
+  }
+}
+
+@keyframes aparitie_meniu_p {
+  0% {
+    -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(#0000), color-stop(40%, #000));
+    -webkit-mask-image: linear-gradient(to top, #0000 0%, #000 40%);
+    -webkit-mask-size: 100% 250%;
+    -webkit-mask-origin: content-box;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: 0% 100%;
+  }
+  100% {
+    -webkit-mask-position: 0 0;
+  }
+}
+/*# sourceMappingURL=scssnav500.css.map */

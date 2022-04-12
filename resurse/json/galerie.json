@@ -1,0 +1,133 @@
+{
+    "cale_galerie":"resurse/imagini/galerie",
+    "imagini":[
+    
+        {
+            "fisier":"charmer_charmer_300x300.jpg",
+            "descriere":"Charmer - Charmer",
+            "alt":"Charmer - Charmer",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"charmer_ivy_300x300.jpg",
+            "descriere":"Charmer - Ivy",
+            "alt":"Charmer - Ivy",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"hotmulligan_pilot_300x300.jpg",
+            "descriere":"Hot Mulligan - Pilot",
+            "alt":"Hot Mulligan - Pilot",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"hotmulligan_ybf_300x300.jpg",
+            "descriere":"Hot Mulligan - You'll Be Fine",
+            "alt":"Hot Mulligan - You'll Be Fine",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"americanfootball_lp1_300x300.jpg",
+            "descriere":"American Football - LP1",
+            "alt":"American Football - LP1",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"ceres_dragitdownonyou_300x300.jpg",
+            "descriere":"Ceres - Drag It Down On You",
+            "alt":"Ceres - Drag It Down On You",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"creeper_eternityinyourarms_300x300.jpg",
+            "descriere":"Creeper - Eternity, In Your Arms",
+            "alt":"Creeper - Eternity, In Your Arms",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"harboursandtowers_daciisisamuraii_300x300.jpg",
+            "descriere":"Harbours And Towers - Dacii și Samuraii",
+            "alt":"Harbours And Towers - Dacii și Samuraii",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"mooseblood_illkeepyouinmind_300x300.jpg",
+            "descriere":"Moose Blood - I'll Keep You In Mind",
+            "alt":"Moose Blood - I'll Keep You In Mind",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"origamiangel_somewherecity_300x300.jpg",
+            "descriere":"Origami Angel - Somewhere City",
+            "alt":"Origami Angel - Somewhere City",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"salem_salem_300x300.jpg",
+            "descriere":"Salem - Salem",
+            "alt":"Salem - Salem",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"themenzingers_aftertheparty_300x300.jpg",
+            "descriere":"The Menzingers - After The Party",
+            "alt":"The Menzingers - After The Party",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"thewonderyears_suburbia_300x300.jpg",
+            "descriere":"The Wonder Years - Suburbia",
+            "alt":"The Wonder Years - Suburbia",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"trophyeyes_chemicalmiracle_300x300.jpg",
+            "descriere":"Trophy Eyes - Chemical Miracle",
+            "alt":"Trophy Eyes - Chemical Miracle",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"jimmyeatworld_clarity_300x300.jpg",
+            "descriere":"Jimmy Eat World - Clarity",
+            "alt":"Jimmy Eat World - Clarity",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"thestorysofar_properdose_300x300.jpg",
+            "descriere":"The Story So Far - Proper Dose",
+            "alt":"The Story So Far - Proper Dose",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"freethrow_thosedaysaregone_300x300.jpg",
+            "descriere":"Free Throw - Those Days Are Gone",
+            "alt":"Free Throw - Those Days Are Gone",
+            "anotimp":"primavara"
+        },
+
+        {
+            "fisier":"hotmulligan_opportunities_300x300.jpg",
+            "descriere":"Hot Mulligan - Opportunities",
+            "alt":"Hot Mulligan - Opportunities",
+            "anotimp":"primavara"
+        }
+
+    ]
+
+}

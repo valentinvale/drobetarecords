@@ -1,0 +1,179 @@
+
+/*facem vizibil iconul de hamburger meniu*/
+
+#hamburger{
+    display:block;
+}
+
+/* implicit meniul e ascuns*/
+ul.menu{
+    display:none;
+    position:absolute;
+    width:100%;
+}
+
+/*aici facem vizibil meniul cand faem click pe hamburger meniu*/
+#ch-menu:checked~ul.menu{
+    display: block;
+    z-index: 2;
+    position: absolute;
+    transform-origin: 0 0;
+    animation-name: aparitie_meniu_p;
+    animation-iteration-count:1;
+    animation-duration:0.7s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+}
+#ch-menu:checked+ul.menu>li>div,#ch-menu:checked+ul.menu>li>a{
+    
+    z-index: 2;
+    transform-origin: 50% 50%;
+    animation-name: aparitie_meniu_p_btn;
+    animation-iteration-count:1;
+    animation-duration:0.7s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+}
+/*optiunile se intind pe toata latimea containerului*/
+nav ul.menu li{
+    width:100%;
+}
+
+/*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
+nav ul.menu>li ul{
+    position:absolute;
+    width:100%;
+    z-index:200;
+    transform:scale(1,1);
+}
+
+#ch-menu:checked+ul.menu>li ul>*{
+    position:relative;
+    z-index:200;
+}
+nav ul.menu>li:hover>ul{
+    
+    z-index:200;
+    animation:none;
+}
+
+.liAcasa:hover .acasa{
+    color: var(--headerColor);
+    transition: all 1s linear;
+}
+
+.liAcasa{
+    text-align: center;
+}
+
+b.acasa{
+    display: none;
+}
+
+@keyframes aparitie_meniu_p{
+
+    0%{
+        -webkit-mask-image: linear-gradient(to top, #0000 0%, #000 40%);
+        -webkit-mask-size: 100% 250%;
+        -webkit-mask-origin: content-box;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: 0% 100%;
+    }
+
+    100%{
+        -webkit-mask-position: 0 0;
+    }
+
+}
+
+#container{
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    display: grid;
+    grid-template-areas:
+                         "z-imgpickup"
+                         "utilizatori"
+                         "statistici"
+                         "despre"
+                         "calendar"
+                         "anunturi"
+                         "tabel"
+                         "altceva";
+    
+    grid-template-columns: 1fr;
+
+    row-gap: 1px;
+    column-gap: 1px;
+
+    width: 100%;
+    max-height: 700px;
+}
+
+#container_altceva{
+    display: grid;
+    
+    grid-template-areas: "achizitioneaza achizitioneaza achizitioneaza achizitioneaza"
+                         "produsepopulare produsepopulare produsepopulare produsepopulare"
+                         "noutati noutati noutati noutati";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    row-gap: 1px;
+}
+
+
+#img_pickup{
+    grid-area: z-imgpickup;
+    
+}
+
+
+#utilizatori{
+    grid-area: utilizatori;
+}
+
+#statistici{
+    grid-area: statistici;
+}
+
+#despre{
+    grid-area: despre
+}
+
+#calendar{
+    grid-area: calendar
+}
+
+#tabel{
+    grid-area: tabel 
+}
+
+#anunturi{
+    grid-area: anunturi;
+}
+
+#altceva{
+    grid-area: altceva;
+}
+
+#achizitioneaza{
+    grid-area: achizitioneaza;
+    border: 2px var(--borderColor) solid;
+}
+
+#produsepopulare{
+    grid-area: produsepopulare;
+    border: 2px var(--borderColor) solid;
+}
+
+#noutati{
+    grid-area: noutati;
+    border: 2px var(--borderColor) solid;
+}
+
+#tabel{
+    overflow-x: scroll;
+    max-width: 200px;
+    margin: auto;
+}

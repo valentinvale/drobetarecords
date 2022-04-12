@@ -1,0 +1,55 @@
+<section id="top"></section>
+    <header id="header">
+        <script>
+            var tema=localStorage.getItem("tema");
+    if(tema)
+        document.body.classList.add("dark");
+    else
+        document.body.classList.remove("dark");
+        </script>
+        <h1 id="titlusite">Drobeta Records - <%- locals.propGenerala %></h1>
+        <q><small>Music is the closest thing to a time machine</small></q>
+        <div id="navbar">
+            <nav>
+                <label id="hamburger" for="ch-menu">
+                    <img src="/resurse/imagini/Hamburger_icon_alb.png" alt="menu">
+                </label>
+                <input id="ch-menu" type="checkbox">
+                <ul class="menu">
+                    <li class="liAcasa"><a href="/index" id="dropdownbtn"><i class="fa-solid fa-house"></i><b class="acasa"> Acasa</b></a>
+                        <ul class="submenu">
+                            <li><a href="/index#welcome">Welcome</a></li>
+                            <li><a href="/index#produsepopulare">Populare</a></li>
+                            <li><a href="/index#noutati">Noutati</a></li>
+                        </ul>   
+                    </li>
+                    <li><a href="/viniluri">Viniluri</a>
+                        <ul>
+                            <li><a href="/viniluri#vPop-Punk">Pop-Punk</a></li>
+                            <li><a href="/viniluri#vMidwest Emo">Midwest Emo</a></li>
+                            <li><a href="/viniluri#vFolk-Punk">Folk-Punk</a></li>
+                            <li><a href="/viniluri#vMath-Rock">Math-Rock</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/CD-uri">CD-uri</a>
+                        <ul>
+                            <li><a href="/CD-uri#cPop-Punk">Pop-Punk</a></li>
+                            <li><a href="/CD-uri#cMidwest Emo">Midwest Emo</a></li>
+                            <li><a href="/CD-uri#cFolk-Punk">Folk-Punk</a></li>
+                            <li><a href="/CD-uricMath-Rock">Math-Rock</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/galerie">Galerie</a>
+                    </li>
+                    <li><a href="/produse">Produse</a>
+                        <ul>
+                            <li><a href="/produse?tip=viniluri">Viniluri</a></li>
+                            <li><a href="/produse?tip=cd-uri">CD-uri</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+

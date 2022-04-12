@@ -1,0 +1,6 @@
+Am ales urmatoarele culori:
+    --bgColor:#8885E1;
+    --textColor:#37365C;
+    --headerColor:#1D1B5C;
+    --highlightColor:#4540DB;
+    --borderColor:#3531A8;

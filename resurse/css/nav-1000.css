@@ -1,0 +1,487 @@
+html{
+    --bgColor:#8885E1;
+    --textColor:#37365C;
+    --headerColor:#1D1B5C;
+    --highlightColor:#4540DB;
+    --borderColor:#3531A8;
+
+    --marginMain: 70px;
+}
+
+/**{
+    margin:0;
+    padding:0;
+    font-size:1em;
+}*/
+
+body{
+    background-color: var(--bgColor);
+    color: var(--textColor);
+    margin: 0px;
+    padding: 0px;
+    
+    --menuHeight: 3rem;
+    --hamburgerHeight: 2.5rem;
+
+
+}
+
+main, footer{
+    font-size: 1.5vw;
+}
+
+
+
+
+header{
+    /*background-color: var(--headerColor);*/
+    color: aliceblue;
+    
+
+}
+
+/*-----------------------navbar--------------------------*/
+
+
+ /* ul.menu{
+    display: flex;
+    padding: 0px;
+    margin: 0;
+    z-index: 1;
+    position: absolute;
+    padding-inline-start: 0px;
+    list-style-type: none;
+    text-align: center;
+    overflow: hidden;
+    position: sticky;
+ } 
+ 
+ul.menu li{
+    text-align: center;
+    padding: 10px;
+}
+
+ul.menu a{
+    padding: 10px;
+    display: block;
+}  
+
+ ul.submenu{
+    display: none;
+    padding: 0px;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    transform-origin: 50% 0;
+    list-style-type: none;
+    font-size: 70%;
+    width: 100%;
+} 
+
+
+ ul.menu>li:hover>ul.submenu{
+    display: block;
+}
+
+ul.menu>li:hover{
+    background-color: var(--highlightColor);
+}
+
+nav a{
+    font-style: normal;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+ul.menu li{
+    background-color: var(--headerColor);
+    
+    
+} 
+
+
+ #navbar{
+    overflow: hidden;
+    background-color: var(--headerColor);
+}
+
+#navbar a{
+    float: left;
+    font-size: 16px;
+    color: aliceblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#dropdown{
+    float: left;
+    overflow: hidden;
+    text-decoration: none;
+    
+}
+
+#dropdown #dropdownbtn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: aliceblue;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    text-decoration: none;
+}
+
+#navbar a:hover, dropdown:hover #dropdownbtn{
+    background-color: var(--highlightColor);
+}
+
+#dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: var(--headerColor);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-decoration: none;
+}
+
+#dropdown-content a{
+    float: none;
+    color: aliceblue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#dropdown-content a:hover{
+    background-color: var(--highlightColor);
+}
+
+#dropdown:hover #dropdown-content{
+    display: block;
+}
+
+#navbar a{
+    text-decoration: none;
+}
+
+.menu{
+    text-decoration: none;
+}  */
+
+
+#navbar{
+z-index: 2;
+}
+
+nav{
+    height:var(--menuHeight);
+    width:100%;
+    background-color: var(--headerColor);
+    position:sticky;
+    top: 0;;
+    left:0;
+    z-index: 2;
+
+}
+nav ul, nav li, nav a,nav{
+    padding:0;
+    margin:0;
+}
+ul.menu li{          
+box-sizing: border-box;
+width:120px;
+text-align: center;
+list-style-type: none;
+height:var(--menuHeight);
+float:left;
+}
+ul.menu ul{
+    display:none;
+} 
+ul.menu>li>div{
+    z-index: 2;
+    position: sticky;
+    top: 0;
+}
+ul.menu>li>ul{
+    z-index: 1;
+    position: sticky;
+    top: 0;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+ul.menu li:hover ul{
+    display: block;
+    
+    position: sticky;
+    top: 0;
+    transform-origin: 0 0.5 0;
+    animation-name: subm;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+
+.acasa{
+    color: var(--headerColor);
+    transition: all 1s linear;
+    display: none;
+}
+
+ul.menu li:hover>a,ul.menu li:hover>div{
+    color:var(--highlightColor);
+}
+
+.liAcasa:hover .acasa{
+    color: var(--headerColor);
+    transition: all 1s linear;
+}
+
+ul.menu li a{
+    
+    line-height: 50px;
+    display:block;
+}
+
+
+ul.menu li a, ul.menu li div{
+    cursor:pointer;
+    background-color: var(--headerColor);
+    width:100%;
+    height:100%;
+    transition:all 1s linear;
+    box-sizing: border-box;  
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+    padding:0px;
+}
+
+@keyframes subm{
+    0%{
+        opacity: 0;
+        transform:scale(0,0);
+    }
+    100%{
+        opacity: 1;
+        
+        transform:scale(1,1);
+    }
+}
+
+
+/*----------------hamburger menu-----------*/
+#hamburger{
+    display: none;
+}
+
+#ch-menu{
+    display: none;
+}
+
+#hamburger img{
+    height: var(--hamburgerHeight);
+}
+
+
+
+/*-----------------------altele----------------------------*/
+
+header h1{
+    margin: 0px;
+    padding: 10px;
+}
+
+main{
+    margin: var(--marginMain), var(--marginMain);
+    margin-top: 0;
+    padding: 0;
+    padding-top: 0;
+}
+
+q{
+    font-style: italic;
+}
+
+
+/*----------------iframe----------------*/
+
+#ifroptions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 3px solid var(--borderColor);
+    border-bottom: none;
+
+}
+
+#ifroptions a{
+    display: block;
+    text-align: center;
+    border: 3px solid var(--borderColor);
+    border-bottom: none;
+    width: 100px;
+    height: 80px;
+    font-size: 15px;
+    text-decoration: none;
+    color: aliceblue;
+    margin: 3px;
+    margin-bottom: 0px;
+
+    opacity: 1;
+    transition: 0.5s;
+
+}
+
+#ifroptions a:hover{
+    
+    background-color: var(--highlightColor);
+    transition: 0.5s;
+
+}
+
+#idiframeYT{
+    display: block;
+    margin: auto;
+    width: 400px;
+    height: 300px;
+    border: 5px var(--borderColor) solid;
+}
+
+/*-----------------grid--------------------*/
+
+ #container>div{
+    border: 2px solid;
+    border-color: var(--borderColor);
+} 
+
+#container{
+    display: grid;
+    grid-template-areas:
+                         "z-imgpickup z-imgpickup z-imgpickup z-imgpickup"
+                         "utilizatori statistici statistici despre"
+                         "calendar calendar tabel tabel"
+                         "anunturi anunturi tabel tabel"
+                         "altceva altceva altceva altceva";
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    row-gap: 1px;
+    column-gap: 1px;
+
+
+}
+
+#container_altceva{
+    display: grid;
+    
+    grid-template-areas: "achizitioneaza achizitioneaza achizitioneaza achizitioneaza"
+                         "produsepopulare produsepopulare produsepopulare produsepopulare"
+                         "noutati noutati noutati noutati";
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    row-gap: 1px;
+}
+
+#img_pickup{
+    grid-area: z-imgpickup;
+    
+}
+
+/* #img_pickup img{
+    border: solid;
+    border-width: 30px;
+    border-color: var(--borderColor);
+} */
+
+
+#utilizatori{
+    grid-area: utilizatori;
+}
+
+#statistici{
+    grid-area: statistici;
+}
+
+#despre{
+    grid-area: despre
+}
+
+#calendar{
+    grid-area: calendar
+}
+
+#tabel{
+    grid-area: tabel 
+}
+
+#anunturi{
+    grid-area: anunturi;
+}
+
+#altceva{
+    grid-area: altceva;
+}
+
+#achizitioneaza{
+    grid-area: achizitioneaza;
+    border: 2px var(--borderColor) solid;
+}
+
+#produsepopulare{
+    grid-area: produsepopulare;
+    border: 2px var(--borderColor) solid;
+}
+
+#noutati{
+    grid-area: noutati;
+    border: 2px var(--borderColor) solid;
+}
+
+/*-----------------link top--------------------*/
+
+#link-top{
+    position: fixed;
+    display:block;
+    opacity:0.3;
+    transition: 700ms;
+    text-align: center;
+    line-height : 60px;
+    color: var(--textColor);
+
+    bottom: 20px;;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    border:1px solid var(--headerColor);
+    box-shadow: 0px 0px 4px 4px inset var(--headerColor);
+    overflow:visible;
+}
+
+#link-top:hover{
+    opacity: 1;
+    transition: 700ms;
+    background-color: rgba(240, 248, 255, 0.411);
+}
+
+#link-top a{
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    
+}

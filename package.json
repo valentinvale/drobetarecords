@@ -1,0 +1,27 @@
+{
+  "name": "drobetarecords",
+  "version": "1.0.0",
+  "description": "Magazin viniluri si cd-uri",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "muzica",
+    "punk",
+    "cd",
+    "vinil",
+    "rock"
+  ],
+  "author": "Semen Valentin-Ion",
+  "license": "ISC",
+  "dependencies": {
+    "express-session": "^1.17.2",
+    "formidable": "^2.0.1",
+    "fs": "^0.0.1-security",
+    "js": "^0.1.0",
+    "pg": "^8.7.3",
+    "sass": "^1.49.9",
+    "sharp": "^0.30.3"
+  }
+}

@@ -1,0 +1,31 @@
+<div id="galerie_statica">   
+    <% let anotimp = "";
+    d = new Date();
+    luna = d.getMonth();
+    if(luna < 2 || luna > 11)
+        anotimp = "iarna";
+    else if(luna >= 2 || luna < 6)
+        anotimp = "primavara";
+    else if(luna >= 6 || luna < 9)
+        anotimp = "vara";
+    else if(luna >= 9 || luna < 12)
+        anotimp = "toamna";
+    %>
+    <% for (let imag of locals.imagini){ %>
+        <%
+            if(anotimp == imag.anotimp) {
+        %>
+        
+            <figure>
+                <picture>
+                    <source srcset="<%- imag.mic%>" media="(max-width:800px)" />
+                    <source srcset="<%- imag.mediu%>" media="(max-width:1200px)" />
+                    <img src="<%- imag.mare %>" alt= <%- imag.alt %> />
+                </picture>
+                <figcaption><%- imag.descriere %></figcaption>
+            </figure>
+        
+        <% } %>
+    <% } %>
+           
+ </div> 

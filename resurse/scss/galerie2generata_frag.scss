@@ -1,0 +1,372 @@
+$setare-dimensiune: 3 !default;
+
+#galerie2 {
+	.grid_2col {
+		margin: 0;
+		padding: 0;
+		display: grid;
+		width: $setare-dimensiune * 300px;
+		grid-row-gap: 0;
+		grid-column-gap: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		@if $setare-dimensiune == 3{
+			animation-name: gal2_9;
+			animation-duration: 28s;
+			
+		}
+		@else if $setare-dimensiune == 2{
+			animation-name: gal2_4;
+			animation-duration: 20s;
+		}
+
+		@else {
+			animation-name: gal2_16;
+			animation-duration: 36s;
+		}
+
+		
+		animation-direction: alternate;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-duration: 28s;
+
+		// transform: scale(1) translate(-33.333%, -33.333%);
+
+        grid-template-columns: repeat($setare-dimensiune, 1fr);
+		grid-template-rows: repeat($setare-dimensiune, 1fr);
+
+		&:hover {
+			animation-play-state: paused;
+		}
+
+	}
+	figure {
+		height: 300px;
+		position: relative;
+		overflow: hidden;
+	}
+	img {
+		height: 300px;
+	}
+
+	
+
+}
+
+
+
+
+@keyframes gal2_9 {
+	0% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	5.555555% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, 0%);
+	}
+	11.111111% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	16.666666% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -33.333%);
+	}
+	22.222222% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	27.777777% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -66.666%);
+	}
+	33.333333% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	38.888888% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-33.333%, -66.666%);
+	}
+	44.444444% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	49.999999% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-33.333%, -33.333%);
+	}
+	55.555555% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	61.111111% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-33.333%, 0%);
+	}
+	66.666666% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	72.22222215% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-66.666%, 0%);
+	}
+	77.777777% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	83.33333305% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-66.666%, -33.333%);
+	}
+	88.888888% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	94.4444444% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-66.666%, -66.666%);
+	}
+	100% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+}
+
+@keyframes gal2_4 {
+	0% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	5.555555% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, 0%);
+	}
+	11.111111% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	16.666666% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -50%);
+	}
+	22.222222% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	27.777777% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, 0%);
+	}
+	33.333333% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	38.888888% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, -50%);
+	}
+	44.444444% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	49.999999% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -50%);
+	}
+	55.555555% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	61.111111% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, 0%);
+	}
+	66.666666% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	72.22222215% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, -50%);
+	}
+	77.777777% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	83.33333305% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-0%, -50%);
+	}
+	88.888888% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	94.4444444% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, 0%);
+	}
+	100% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+}
+
+@keyframes gal2_16 {
+	0% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	3.125% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, 0%);
+	}
+	6.250% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	9.375% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-25%, 0%);
+	}
+	12.500% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	15.625% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, 0%);
+	}
+	18.750% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	25.000% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-75%, 0%);
+	}
+	28.125% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	31.250% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -25%);
+	}
+	34.375% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	37.500% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-25%, -25%);
+	}
+	40.625% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	43.750% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, -25%);
+	}
+	46.875% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	50.000% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-75%, -25%);
+	}
+	53.125% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	56.250% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -50%);
+	}
+	59.375% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	62.500% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-25%, -50%);
+	}
+	65.625% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	68.750% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, -50%);
+	}
+	71.875% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	75.000% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-75%, -50%);
+	}
+	78.125% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	81.250% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(0%, -75%);
+	}
+	87.500% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	90.625% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-25%, -75%);
+	}
+	93.750% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+	96.875% {
+		transform-origin: 0% 0%;
+		transform: scale(1) translate(-50%, -75%);
+	}
+	100% {
+		transform-origin: 0% 0%;
+		transform: scale(0.33) translate(0%, 0%);
+	}
+}
+
+.galerie {
+	width: 300px;
+	height: 300px;
+	border: 5px solid transparent;
+	border-image: url("/resurse/imagini/apa_border.jpg") 30 round;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	figcaption {
+		position: absolute;
+		bottom: 0;
+		background: rgba(255,255,255,0.7);
+		width: 300px;
+		text-align: center;
+		bottom: 0px;
+	}
+	figure {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		margin: 0;
+		padding: 0;
+	}
+}
+

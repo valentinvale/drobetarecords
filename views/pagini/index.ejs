@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="ro">
+
+<head>
+    <meta name="keywords" content="vinil, muzică, rock, punk, cd">
+    <meta name="descriptions" content="Magazin de muzică. Viniluri si CD-uri">
+    <title>Drobeta Records - home</title>
+    <button id="btn_tema">Schimba Tema</button>
+    
+    <%- include("../fragmente/head.ejs"); 
+    %>
+
+</head>
+
+<body>
+    
+    <%- include("../fragmente/header.ejs");
+    %>
+    <div id="banner">
+        Acesta este un proiect scolar
+    </div>
+   
+    <main>
+        <section id="welcome">
+            
+            <div id="container">
+                
+                <div id="img_pickup">
+                    <!-- <div id="poatenu">
+                        <br>
+                        <h1>Poate nu cumperi</h1>
+                        <br>
+                    </div> -->
+                    <figure>
+                        <!---- <source srcset="./resurse/imagini/turntable_mobile.jpg" media="(max-width: 500px)"/>
+                            <source srcset="./resurse/imagini/turntable_tablet.jpg" media="(max-width: 700px)"/>
+                            <img src="./resurse/imagini/turntable_desktop.jpg" alt="Poza Pick-up"/>
+                           -->
+                        <img sizes="(min-width:1000px) 1200px, (min-width:300px) 350px, 200px"
+                            srcset="./resurse/imagini/turntable_desktop.jpg 1000w, ./resurse/imagini/turntable350.jpg 350w, ./resurse/imagini/turntable200.jpg 200w"
+                            alt="Poza Pick-up" />
+
+                        <figcaption>Cel mai nou model de Pick-up</figcaption>
+                    </figure>
+                </div>
+
+                <button id="btn_tema">Schimba Tema</button>
+
+                <div id="utilizatori" class="areaCuBackDif">
+                    <p>PLACEHOLDER UTILIZATORI.</p>
+                    <p><%- locals.ip %></p>
+                </div>
+
+                <div id="statistici" class="areaCuBackDif">
+                    <p>PLACEHOLDER STATISTICI</p>
+                </div>
+
+                <div id="despre" class="areaCuBackDif">
+                    <p>PLACEHOLDER DESPRE</p>
+                </div>
+
+                <div id="calendar" class="areaCuBackDif">
+                    <p>PLACEHOLDER CALENDAR</p>
+                </div>
+
+                <div id="anunturi" class="areaCuBackDif">
+                    <p>PLACEHOLDER ANUNTURI</p>
+                </div>
+
+                <div id="tabel" class="areaCuBackDif">
+                    <table>
+                        <caption>Cele mai apreciate albume disponibile</caption>
+                        <thead>
+                            <tr>
+                                <th>Trupă</th>
+                                <th>Album</th>
+                                <th>Gen muzical</th>
+                                <th>Tip album</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Hot Mulligan</td>
+                                <td>You'll Be Fine</td>
+                                <td>Midwest-Emo</td>
+                                <td>LP</td>
+                            </tr>
+                            <tr>
+                                <td>Charmer</td>
+                                <td>Ivy</td>
+                                <td>Midwest-Emo</td>
+                                <td>LP</td>
+                            </tr>
+                            <tr>
+                                <td>The Wonder Years</td>
+                                <td>Suburbia I've Given You All And Now I'm Nothing</td>
+                                <td>Midwest-Emo</td>
+                                <td>LP</td>
+                            </tr>
+                            <tr>
+                                <td>The Menzingers</td>
+                                <td>After The Party</td>
+                                <td>Punk-Rock</td>
+                                <td>LP</td>
+                            </tr>
+                            <tr>
+                                <td>Hot Mulligan</td>
+                                <td>I Won't Reach Out To You</td>
+                                <td>Pop-Punk</td>
+                                <td>EP</td>
+                            </tr>
+                        </tbody>
+
+                        <tfoot>
+                            <tr>
+                                <td>Cea mai populara trup</td>
+                                <td>Cel mai popular album</td>
+                                <td colspan="2">Cel mai popular gen</td>
+                                
+                            </tr>
+                        </tfoot>
+
+                    </table>
+
+
+                </div>
+
+                <div id="altceva">
+                    <div id="container_altceva">
+                        <div id="achizitioneaza">
+                            <p>Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit.
+                                Phasellus ac nisl nec nisi dapibus aliquam.
+                                Ut a justo velit. Nulla sit amet accumsan ipsum.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                Nullam nec lectus id turpis finibus volutpat eget ac odio. Integer at posuere tortor.
+                                Curabitur a tortor non eros suscipit finibus. Nulla eget venenatis magna.
+                                Vivamus at lorem nec mi imperdiet tincidunt ut ut libero. Proin id pellentesque neque.
+                                Nulla in ipsum sed neque varius pretium. Interdum et malesuada fames ac ante ipsum
+                                primis in faucibus.
+                                Mauris tortor tortor, imperdiet sit amet lectus id, interdum aliquam nunc. Phasellus
+                                ultricies justo mauris,
+                                in mollis urna volutpat eget. Integer at nibh ut nulla fermentum faucibus in quis massa.
+                                Acesta este magazinul numărul unu în România pentru iubitorii de muzică punk-rock.
+                                <strong>Achiziționează chiar acum produsele tale preferate dintr-o gamă largă de
+                                    viniluri sau CD-uri.</strong>
+                            </p>
+
+                        </div>
+
+
+                        <div id="watermark">Semen Valentin-Ion</div>
+
+                        <section id="produsepopulare">
+                            <h2>Produse Populare</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis commodo rhoncus posuere.
+                                Maecenas tristique id mauris non scelerisque. Etiam a nulla imperdiet eros commodo
+                                sollicitudin.
+                                Morbi non libero nec enim vulputate scelerisque. Praesent eleifend lacus nec molestie
+                                eleifend.
+                                Nunc dapibus maximus odio, eu accumsan metus ullamcorper et.
+                                Quisque bibendum lacus at sem condimentum, vestibulum iaculis neque ullamcorper.
+                                Nam luctus venenatis turpis, non auctor dui hendrerit ac.
+                                Donec sed pellentesque lectus. Donec luctus non dolor blandit molestie.
+                                Pellentesque semper arcu ut scelerisque posuere. Pellentesque lorem ex, semper sed
+                                bibendum eget, convallis et purus.
+                                Phasellus congue lectus eget nisl imperdiet, efficitur porta velit vestibulum.
+                                <br>Albumul DK 40 de la Dead Kennedys este printre cele mai îndrăgite produse. Acum la
+                                doar <s>140 </s><ins>100</ins> lei
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/Dead_Kennedys" target="_blank">Câteva cuvinte despre Dead
+                                Kennedys</a>
+
+                            <br>
+                            <br>
+                            <br>
+                            <div id="video_casey">
+                                <video controls poster="/resurse/imagini/casey_thumbnail.jpg" preload="auto">
+                                    <source src="/resurse/videos/casey720.mp4">
+                                    <source src="/resurse/videos/casey720.ogg">
+                                    <track default srclang="ro" src="/resurse/vtt/caseyRO.vtt"/>
+                                    <track srclang="en" src="/resurse/vtt/caseyEN.vtt"/>
+                                    Video-ul nu poate fi redat
+                                </video>
+                            </div>
+
+                            <%- include("../fragmente/galerie_statica.ejs"); 
+            %>
+
+                             <br>
+                             <br>
+                             <br>
+
+                             <div id="galerie-animata" class="galerie-a">
+                                 <figure>
+                                     <img src="/resurse/imagini/galerie_animata/charmer_charmer_300x300.jpg" alt="Charmer - Charmer"/>
+                                     <figcaption>Charmer - Charmer</figcaption>
+                                 </figure>
+
+                                 <figure>
+                                    <img src="/resurse/imagini/galerie_animata/charmer_Ivy_300x300.jpg" alt="Charmer - Ivy"/>
+                                    <figcaption>Charmer - Ivy</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <img src="/resurse/imagini/galerie_animata/hotmulligan_pilot_300x300.jpg" alt="Hot Mulligan - Pilot"/>
+                                    <figcaption>Hot Mulligan - Pilot</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <img src="/resurse/imagini/galerie_animata/hotmulligan_ybf_300x300.jpg" alt="Hot Mulligan - You'll Be Fine"/>
+                                    <figcaption>Hot Mulligan - You'll Be Fine</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <img src="/resurse/imagini/galerie_animata/hotmulligan_opportunities_300x300.jpg" alt="Hot Mulligan - Opportunities"/>
+                                    <figcaption>Hot Mulligan - Opportunities</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <img src="/resurse/imagini/galerie_animata/salem_salem_300x300.jpg" alt="Salem - Salem"/>
+                                    <figcaption>Salem - Salem</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <img src="/resurse/imagini/galerie_animata/freethrow_thosedaysaregone_300x300.jpg" alt="Free Throw - Those Days Are Gone"/>
+                                    <figcaption>Free Throw - Those Days Are Gone</figcaption>
+                                </figure>
+
+                             </div>
+
+
+                             <div id="galerie2" class="galerie">
+                                <div class="grid_2col">
+                                  <!-- <figure>
+                                    <img src="resurse/imagini/galerie2/americanfootball_lp1_300x300.jpg" alt="American Football - LP1" />
+                                    <figcaption>American Football - LP1</figcaption>
+                                  </figure>
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/ceres_dragitdownonyou_300x300.jpg" alt="Ceres - Drag It Down On You" />
+                                    <figcaption>Ceres - Drag It Down On You</figcaption>
+                                  </figure>
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/charmer_charmer_300x300.jpg" alt="Charmer - Charmer" />
+                                    <figcaption>Charmer - Charmer</figcaption>
+                                  </figure>
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/charmer_Ivy_300x300.jpg" alt="Charmer - Ivy" />
+                                    <figcaption>Charmer - Ivy</figcaption>
+                                  </figure>
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/creeper_eternityinyourarms_300x300.jpg" alt="Creeper - Eternity In Your Arms" />
+                                    <figcaption>Creeper - Eternity In Your Arms</figcaption>
+                                  </figure>
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/hotmulligan_opportunities_300x300.jpg" alt="Hot Mulligan - Opportunities" />
+                                    <figcaption>Hot Mulligan - Opportunities</figcaption>
+                                  </figure>
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/hotmulligan_pilot_300x300.jpg" alt="Hot Mulligan - Pilot" />
+                                    <figcaption>Hot Mulligan - Pilot</figcaption>
+                                  </figure>
+
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/thestorysofar_properdose_300x300.jpg" alt="The Story So Far - Proper Dose" />
+                                    <figcaption>The Story So Far - Proper Dose</figcaption>
+                                  </figure>
+
+                                  <figure>
+                                    <img src="resurse/imagini/galerie2/thewonderyears_suburbia_300x300.jpg" alt="The Wonder Years - Suburbia" />
+                                    <figcaption>The Wonder Years - Suburbia</figcaption>
+                                  </figure> -->
+
+                                  <% for (let i = 0; i < locals.dimensiune * locals.dimensiune; i++){ %>
+                                   
+                                    
+                                        <figure>
+                                            <picture>
+                                                <img src="<%- locals.imagini[i].mare %>" alt= <%- locals.imagini[i].alt %> />
+                                            </picture>
+                                            <figcaption><%- locals.imagini[i].descriere %></figcaption>
+                                        </figure>
+                                    
+                                    <% } %>
+
+                                </div>
+                              </div>
+                
+
+                            <!-- <hr id="bubbles"> -->
+
+                            <br>
+                            <br>
+                            <div>
+                                <details>
+                                    <summary>Cum alegem ce produse aducem în stoc?</summary>
+                                    <ul>Verificăm ce se ascultă în ultima perioadă</ul>
+                                    <ul>Urmărim feedback-ul clienților</ul>
+                                    <ul>Ne consultăm cu experții noștri</ul>
+                                </details>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div>
+                                
+                                <div id="ifroptions">
+                                    <a href="https://www.youtube.com/embed/jgc8a7ikd2w" target="iframeYT">The Story So Far -
+                                        Upside Down</a>
+                                    <br>
+                                    <a href="https://www.youtube.com/embed/Spy-zkWHO4Y" target="iframeYT">The Wonder Years -
+                                        The Devil in My Bloodstream</a>
+                                    <br>
+                                    <a href="https://www.youtube.com/embed/zWYm4efSrio" target="iframeYT">Hot Mulligan -
+                                        Deluxe Capacitor</a>
+                                </div>
+                                <iframe src="https://www.youtube.com/embed/zWYm4efSrio" name="iframeYT" id="idiframeYT"></iframe>
+                            </div>
+                            <br>
+
+                        </section>
+
+                        <br>
+
+
+                        <section id="noutati">
+                            <h2>Noutăți</h2>
+                            <p>Muzică nouă 2022</p>
+                            <ul>
+                                <li><i lang="en">Punk</i></li>
+                                <li><i lang="en">Pop-Punk</i></li>
+                                <li><i lang="en">Folk-Punk</i></li>
+                            </ul>
+                            <section>
+                                <h3>Lansate recent</h3>
+                                <p>Donec sed pellentesque lectus. Donec luctus non dolor blandit molestie.
+                                    Pellentesque semper arcu ut scelerisque posuere. Pellentesque lorem ex, semper sed
+                                    bibendum eget, convallis et purus.
+                                    Phasellus congue lectus eget nisl imperdiet, efficitur porta velit vestibulum.
+                                    <br>Achizitionează <b>noul album <b>Pennywise</b>. Acum în stoc.
+                                </p>
+                                <br>
+                                <a href="./resurse/docs/listaalbume.docx" download="Lista Produse">Downloadează lista cu
+                                    cele mai noi produse!</a>
+                                <br>
+                                <br>
+                                <br>
+                                <div>
+                                    <details>
+                                        <summary>Cerere aducere album in stoc</summary>
+                                        <ol>
+                                            <li>Trimite E-mail cu numele albumului dorit</li>
+                                            <li>Te vom anunța dacă albumul poate fi adus în stoc</li>
+                                            <li>Completează detaliile de livrare</li>
+                                            <li>Efectuează plata</li>
+                                        </ol>
+                                    </details>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+
+                            </section>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include("../fragmente/footer.ejs");
+    %>
+
+</body>
+
+</html>

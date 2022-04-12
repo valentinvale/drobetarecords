@@ -1,0 +1,108 @@
+$bgColor: #8885E1;
+$textColor: #37365C;
+$headerColor: #1D1B5C;
+$highlightColor: #4540DB;
+$borderColor: #3531A8;
+$marginMain: 20px;
+$menuHeight: 3rem;
+$hamburgerHeight: 2.5rem;
+
+#hamburger {
+	display: block;
+}
+ul {
+	&.menu {
+		display: none;
+		position: absolute;
+		width: 100%;
+	}
+}
+#ch-menu {
+	&:checked {
+		& ~ ul {
+			&.menu {
+				display: block;
+				z-index: 2;
+				position: absolute;
+				transform-origin: 0 0;
+				animation-name: aparitie_meniu_p;
+				animation-iteration-count: 1;
+				animation-duration: 0.7s;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+			}
+		}
+		& + ul {
+			&.menu {
+				& > li {
+					ul {
+						& > * {
+							position: relative;
+							z-index: 200;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#ch-menu:checked+ul.menu>li>div,#ch-menu:checked+ul.menu>li>a {
+	z-index: 2;
+	transform-origin: 50% 50%;
+	animation-name: aparitie_meniu_p_btn;
+	animation-iteration-count: 1;
+	animation-duration: 0.7s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+nav {
+	ul {
+		&.menu {
+			li {
+				width: 100%;
+			}
+			& > li {
+				ul {
+					position: absolute;
+					width: 100%;
+					z-index: 200;
+					transform: scale(1,1);
+				}
+				&:hover {
+					& > ul {
+						z-index: 200;
+						animation: none;
+					}
+				}
+			}
+		}
+	}
+}
+.liAcasa {
+	text-align: center;
+	&:hover {
+		.acasa {
+			color: $headerColor;
+			transition: all 1s linear;
+		}
+	}
+}
+b {
+	&.acasa {
+		display: none;
+	}
+}
+
+@keyframes aparitie_meniu_p {
+		0%{
+        -webkit-mask-image: linear-gradient(to top, #0000 0%, #000 40%);
+		-webkit-mask-size: 100% 250%;
+		-webkit-mask-origin: content-box;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: 0% 100%;
+	}
+
+        100% {
+	    -webkit-mask-position: 0 0; 
+    }
+}

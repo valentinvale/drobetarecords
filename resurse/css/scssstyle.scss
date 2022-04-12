@@ -1,0 +1,313 @@
+
+	$bgColor: #8885E1;
+	$textColor: #37365C;
+	$headerColor: #1D1B5C;
+	$highlightColor: #4540DB;
+	$borderColor: #3531A8;
+	$marginMain: 20px;
+	$menuHeight: 3rem;
+	$hamburgerHeight: 2.5rem;
+
+body {
+	background-color: $bgColor;
+	color: $textColor;
+	font-family: 'Urbanist', serif;
+	
+}
+main {
+	margin: 70px;
+	margin-bottom: 0;
+	margin: $marginMain, $marginMain;
+	margin-top: 0;
+	padding: 0;
+	padding-top: 0;
+}
+a {
+	color: $textColor;
+	text-decoration: none;
+	&:hover {
+		color: $highlightColor;
+	}
+}
+main, footer {
+	font-size: 1.5vw;
+}
+header {
+	color: aliceblue;
+	h1 {
+		margin: 0px;
+		padding: 10px;
+	}
+}
+#navbar {
+	z-index: 2;
+}
+nav {
+	height: $menuHeight;
+	width: 100%;
+	background-color: $headerColor;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+nav ul, nav li, nav a,nav {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	&.menu {
+		li {
+			box-sizing: border-box;
+			width: 120px;
+			text-align: center;
+			list-style-type: none;
+			height: $menuHeight;
+			float: left;
+			&:hover {
+				ul {
+					display: block;
+					position: sticky;
+					top: 0;
+					transform-origin: 0 0.5 0;
+					animation-name: subm;
+					animation-timing-function: linear;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+					animation-iteration-count: 1;
+				}
+			}
+			a {
+				line-height: 50px;
+				display: block;
+			}
+		}
+		ul {
+			display: none;
+		}
+		& > li {
+			& > div {
+				z-index: 2;
+				position: sticky;
+				top: 0;
+			}
+			& > ul {
+				z-index: 1;
+				position: sticky;
+				top: 0;
+			}
+		}
+	}
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.acasa {
+	color: $headerColor;
+	transition: all 1s linear;
+}
+ul.menu li:hover>a,ul.menu li:hover>div {
+	color: $highlightColor;
+}
+.liAcasa {
+	&:hover {
+		.acasa {
+			color: $highlightColor;
+			transition: all 1s linear;
+		}
+	}
+}
+ul.menu li a, ul.menu li div {
+	cursor: pointer;
+	background-color: $headerColor;
+	width: 100%;
+	height: 100%;
+	transition: all 1s linear;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: aliceblue;
+	font-weight: bold;
+	padding: 0px;
+}
+@keyframes subm {
+	
+		0%{
+        opacity: 0;
+		transform: scale(0,0);
+        }
+
+    100% {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
+
+
+	#hamburger {
+		display: none;
+	}
+#ch-menu {
+	display: none;
+}
+#hamburger {
+	img {
+		height: $hamburgerHeight;
+	}
+}
+q {
+	font-style: italic;
+}
+#ifroptions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	border: 3px solid $borderColor;
+	border-bottom: none;
+	a {
+		display: block;
+		text-align: center;
+		border: 3px solid $borderColor;
+		border-bottom: none;
+		width: 100px;
+		height: 80px;
+		font-size: 15px;
+		text-decoration: none;
+		color: aliceblue;
+		margin: 3px;
+		margin-bottom: 0px;
+		opacity: 1;
+		transition: 0.5s;
+		&:hover {
+			background-color: $highlightColor;
+			transition: 0.5s;
+		}
+	}
+}
+#idiframeYT {
+	display: block;
+	margin: auto;
+	width: 400px;
+	height: 300px;
+	border: 5px $borderColor solid;
+}
+#container {
+	display: grid;
+	grid-template-areas: "z-imgpickup z-imgpickup z-imgpickup z-imgpickup"
+                         "utilizatori statistici statistici despre"
+                         "calendar calendar tabel tabel"
+                         "anunturi anunturi tabel tabel"
+                         "altceva altceva altceva altceva";
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	row-gap: 1px;
+	column-gap: 1px;
+	& > div {
+		border: 2px solid;
+		border-color: $borderColor;
+	}
+}
+#container_altceva {
+	display: grid;
+	grid-template-areas: "achizitioneaza achizitioneaza achizitioneaza achizitioneaza"
+                         "produsepopulare produsepopulare produsepopulare produsepopulare"
+                         "noutati noutati noutati noutati";
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	row-gap: 1px;
+}
+#img_pickup {
+	grid-area: z-imgpickup;
+}
+#utilizatori {
+	grid-area: utilizatori;
+}
+#statistici {
+	grid-area: statistici;
+}
+#despre {
+	grid-area: despre;
+}
+#calendar {
+	grid-area: calendar;
+}
+#tabel {
+	grid-area: tabel;
+}
+#anunturi {
+	grid-area: anunturi;
+}
+#altceva {
+	grid-area: altceva;
+}
+#achizitioneaza {
+	grid-area: achizitioneaza;
+	border: 2px $borderColor solid;
+}
+#produsepopulare {
+	grid-area: produsepopulare;
+	border: 2px $borderColor solid;
+}
+#noutati {
+	grid-area: noutati;
+	border: 2px $borderColor solid;
+}
+#link-top {
+	position: fixed;
+	display: block;
+	opacity: 0.3;
+	transition: 700ms;
+	text-align: center;
+	line-height: 60px;
+	color: $textColor;
+	bottom: 20px;
+	right: 20px;
+	width: 70px;
+	height: 70px;
+	background-color: aliceblue;
+	border-radius: 50%;
+	border: 1px solid $headerColor;
+	box-shadow: 0px 0px 4px 4px inset $headerColor;
+	overflow: visible;
+	&:hover {
+		opacity: 1;
+		transition: 700ms;
+		background-color: rgba(240, 248, 255, 0.411);
+	}
+	a {
+		font-size: 30px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+#address {
+	margin-top: 0px;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	line-height: 40px;
+	a {
+		text-decoration: none;
+		font-style: normal;
+		padding-left: 10px;
+		padding-right: 10px;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		width: 200px;
+		margin-top: 10px;
+	}
+}
+#crAndDatetime {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#crAndDatetime small, time {
+	font-style: italic;
+}
+footer {
+	background-color: $headerColor;
+	margin-bottom: 0;
+	padding-bottom: 10px;
+}
