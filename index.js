@@ -56,6 +56,10 @@ app.get("/galerie", function(req, res){
     res.render("pagini/galerie", {imagini: obImagini.imagini});
 })
 
+app.get("/inreg", function(req, res){
+    res.render("pagini/inregistrare")
+})
+
 app.get("*/galerie-animata.css", function(req, res){
     var sirScss = fs.readFileSync(__dirname+"/resurse/scss/galerie_animata.scss").toString("utf8");
     var culori = ["Navy", "Black", "Green", "Yellow"];
@@ -107,9 +111,10 @@ app.get("/produse", function(req, res){
     console.log(req.query);
     console.log('sdlasjdask')
     client.query("select * from unnest(enum_range(null::categ_discuri))", function(err, rezCateg){
-        var cond_where=req.query.tip ? ` tip_produs='${req.query.tip}' ` : "1=1"
+        var cond_where=req.query.tip ? ` categorie='${req.query.tip}' ` : "1=1"
 
         client.query("select * from discuri where "+cond_where, function(err, rezQuery){
+            console.log(err)
             console.log('bbbbb')
             res.render("pagini/produse", {produse: rezQuery.rows, optiuni: rezCateg.rows});
           console.log('cccccc')
@@ -218,5 +223,8 @@ function randeazaEroare(res, identificator, status, titlu, text, imagine){
 
 creeazaErori();
 
-app.listen(8080);
+var s_port=process.env.PORT || 5000;
+app.listen(s_port);
+
+//app.listen(8080);
 console.log("A pornit")

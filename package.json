@@ -4,7 +4,8 @@
   "description": "Magazin viniluri si cd-uri",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
   },
   "keywords": [
     "muzica",
@@ -23,5 +24,10 @@
     "pg": "^8.7.3",
     "sass": "^1.49.9",
     "sharp": "^0.30.3"
+  },
+
+  "engines":{
+    "node":"17.x"
   }
+
 }

@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
             var valCategorie = document.getElementById("inp-categorie").value;
             
-            let categorieArt = document.getElementsByClassName("val-categorie")[0].innerHTML;
+            let categorieArt = art.getElementsByClassName("val-categorie")[0].innerHTML;
 
             let conditie4 = (valCategorie == categorieArt) || (valCategorie == "toate");
 
