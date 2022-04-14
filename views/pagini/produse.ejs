@@ -40,10 +40,54 @@
                 <% } %>
             </select>
         </label>
+
+        <label>Lună adăugare:
+            <select id="inp-luna" multiple>
+                <option value=1 selected="selected">Ianuarie</option>
+                <option value=2 selected="selected">Februarie</option>
+                <option value=3 selected="selected">Martie</option>
+                <option value=4 selected="selected">Aprilie</option>
+                <option value=5 selected="selected">Mai</option>
+                <option value=6 selected="selected">Iunie</option>
+                <option value=7 selected="selected">Iulie</option>
+                <option value=8 selected="selected">August</option>
+                <option value=9 selected="selected">Septembrie</option>
+                <option value=10 selected="selected">Octombrie</option>
+                <option value=11 selected="selected">Noiembrie</option>
+                <option value=12 selected="selected">Decembrie</option>
+                
+            </select>
+        </label>
+
+        <label>Afișează doar produsele cu discount pentru disc-urile colorate:
+            <input id="inp-disc-colorat" type="checkbox"></input>
+        </label>
+        <br>
+
+        <label>Genuri:
+            <input list="inp-genuri" type="text" id="input-genuri">
+            <datalist id="inp-genuri">
+                <option value="Pop-Punk">Pop-Punk</option>
+                <option value="Midwest-Emo">Midwest-Emo</option>
+                <option value="Math-Rock">Math-Rock</option>
+                <option value="Punk">Punk</option>
+                <option value="Indie">Indie</option>
+                <option value="Alternative">Alternative</option>
+            </datalist>
+        </label>
+
+        <br>
+
+        <label>Introdu descrierea:<br>
+            <textarea id="inp-descriere">
+
+            </textarea>
+        </label>
+
         <p>
         <button id="filtrare">Filtreaza</button> <button id="resetare">Reseteaza</button><br/>
-        <button id="sortCrescNume">Sorteaza crescator dupa nume si pret</button>
-        <button id="sortDescrescNume">Sorteaza descrescator dupa nume si pret</button>
+        <button id="sortCrescNume">Sorteaza crescator dupa numele artistului si pret</button>
+        <button id="sortDescrescNume">Sorteaza descrescator dupa numele artistului si pret</button>
         
         </p>
         
@@ -53,15 +97,33 @@
                 <% for( let prod of locals.produse) { %>
                     <article class="produs" >
                         <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
-                        <div class="info-prod">
-                            <p class="gramaj">Artist: <span class="val-artist"><%- prod.artist%></span></p>
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
-                            <p class="dimensiune">Dimensiune: <span class="val-dimensiune"><%- prod.marime%></span></p>
+                        <div id="wrapper_prod">
+                            
+                            <div id="col1_prod">
+                                <figure>
+                                    <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]" /></a>
+                                </figure>
+                                <p class="categorie">Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
+                                <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                            </div>
+                            
+                            <div class="info-prod">
+                                <details>
+                                    <summary>Detalii produs</summary>
+                                        <ul>
+                                            <li><p class="artist">Artist: <span class="val-artist"><%- prod.artist%></span></p></li>
+                                            <li><p class="genuri">Genuri: <span class="val-genuri"><%- prod.genuri%></span></p></li>
+                                            <li><p class="descriere">Descriere: <span class="val-descriere"><%- prod.descriere%></span></p></li>
+                                            <li><p class="disc_colorat">Disc colorat: <span class="val-disc_colorat"><%- prod.disc_colorat %></span></p></li>
+                                            <li><p class="dimensiune">Dimensiune: <span class="val-dimensiune"><%- prod.marime%></span></li>
+                                            <li><p class="data">Data adaugării: <span class="val-data"><time datetime=<%- prod.data_adaugare%>><%- prod.data_adaugare%></time></span></p></li>
+                                        </ul>
+                                    
+                                </details>
+                            </div>
+                            
+                            
                         </div>
-                        <p class="categorie">Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
-                        <figure>
-                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]" /></a>
-                        </figure>
                         <label class="selecteaza-cos">
                             <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off" style="display: none">
                             <div class="selecteaza-content">

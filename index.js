@@ -15,6 +15,8 @@ client.query("select * from drobetarecords", function(err, rezQuery){
     console.log(rezQuery);
 });
 
+const obGlobal = {obImagini: null, obErori: null};
+
 // app.post("/inreg", function(req, res){
 //     var formular = new formidable.IncomingForm();
 //     formular.parse(req, function(err, campuriText,camouriFisier){
@@ -45,7 +47,7 @@ app.get(["/", "/index", "/home"], function(req, res){
     var dimensiuniGal = [2, 3, 4];
     var indiceAleator = Math.floor(Math.random() * dimensiuniGal.length);
     dimAleatoare = dimensiuniGal[indiceAleator];
-    res.render("pagini/index", {ip: req.ip, imagini: obImagini.imagini, dimensiune: dimAleatoare});
+    res.render("pagini/index", {ip: req.ip, imagini: obGlobal.obImagini.imagini, dimensiune: dimAleatoare});
 })
 
 app.get("/viniluri", function(req, res){
@@ -53,7 +55,7 @@ app.get("/viniluri", function(req, res){
 })
 
 app.get("/galerie", function(req, res){
-    res.render("pagini/galerie", {imagini: obImagini.imagini});
+    res.render("pagini/galerie", {imagini: obGlobal.obImagini.imagini});
 })
 
 app.get("/inreg", function(req, res){
@@ -169,17 +171,17 @@ app.get("/*", function(req, res){
 
 function creeazaImagini(){
     var buf=fs.readFileSync(__dirname+"/resurse/json/galerie.json").toString("utf8");
-    obImagini=JSON.parse(buf);//global
+    obGlobal.obImagini=JSON.parse(buf);//global
     d = new Date();
     //console.log(obImagini);
-    for (let imag of obImagini.imagini){
+    for (let imag of obGlobal.obImagini.imagini){
         let nume_imag, extensie;
         [nume_imag, extensie ]=imag.fisier.split(".")// "abc.de".split(".") ---> ["abc","de"]
         let dim_mic=150
         
-        imag.mic=`${obImagini.cale_galerie}/mic/${nume_imag}-${dim_mic}.webp` //nume-150.webp // "a10" b=10 "a"+b `a${b}`
+        imag.mic=`${obGlobal.obImagini.cale_galerie}/mic/${nume_imag}-${dim_mic}.webp` //nume-150.webp // "a10" b=10 "a"+b `a${b}`
         //console.log(imag.mic);
-        imag.mare=`${obImagini.cale_galerie}/${imag.fisier}`;
+        imag.mare=`${obGlobal.obImagini.cale_galerie}/${imag.fisier}`;
         if (!fs.existsSync(imag.mic))
             sharp(__dirname+"/"+imag.mare).resize(dim_mic).toFile(__dirname+"/"+imag.mic);
 
@@ -197,24 +199,24 @@ creeazaImagini();
 
 function creeazaErori(){
     var buf=fs.readFileSync(__dirname+"/resurse/json/erori.json").toString("utf8");
-    obErori=JSON.parse(buf);//global
+    obGlobal.obErori=JSON.parse(buf);//global
 
-    console.log(obErori);
+    console.log(obGlobal.obErori);
 
 }
 
 function randeazaEroare(res, identificator, status, titlu, text, imagine){
-    var eroare = obErori.erori.find(function(elem){ return elem.identificator == identificator; });
+    var eroare = obGlobal.obErori.erori.find(function(elem){ return elem.identificator == identificator; });
     if(status){
         console.log("!!!!!!!!!!!!!!!!!!", eroare, obErori.erori);
-        res.status(identificator).render("pagini/eroare_generala_", {titlu: eroare.titlu, text: eroare.text, imagine: obErori.cale_baza + "/" + eroare.imagine});
+        res.status(identificator).render("pagini/eroare_generala_", {titlu: eroare.titlu, text: eroare.text, imagine: obGlobal.obErori.cale_baza + "/" + eroare.imagine});
     }
 
     else{
         let titlu = titlu || eroare.titlu;
         let text = text || eroare.text;
         if(eroare) 
-            imagine = imagine || obErori.cale_baza+"/"+eroare.imagine;
+            imagine = imagine || obGlobal.obErori.cale_baza+"/"+eroare.imagine;
         else
             imagine="resurse/imagini/erori/lupa.png";
         res.render("pagini/eroare_generala_", {titlu:eroare.titlu, text:eroare.text, imagine:imagine});
@@ -223,8 +225,8 @@ function randeazaEroare(res, identificator, status, titlu, text, imagine){
 
 creeazaErori();
 
-var s_port=process.env.PORT || 5000;
-app.listen(s_port);
+// var s_port=process.env.PORT || 5000;
+// app.listen(s_port);
 
-//app.listen(8080);
+app.listen(8080);
 console.log("A pornit")

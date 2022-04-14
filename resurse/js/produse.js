@@ -50,9 +50,47 @@ window.addEventListener("DOMContentLoaded", function(){
 
             var valCategorie = document.getElementById("inp-categorie").value;
             
-            let categorieArt = art.getElementsByClassName("val-categorie")[0].innerHTML;
+            let categorieArt = art.getElementsByClassName("val-categorie")[0];
+            
 
             let conditie4 = (valCategorie == categorieArt) || (valCategorie == "toate");
+
+            let dataArt = art.getElementsByClassName("val-data")[0].innerHTML;
+            if (dataArt.includes("mar")) dataArt = '3'; 
+            else if(dataArt.includes("apr")) dataArt = '4';
+            else if(dataArt.includes("may")) dataArt = '5';
+            else if(dataArt.includes("jun")) dataArt = '6';
+            else if(dataArt.includes("jul")) dataArt = '7';
+            else if(dataArt.includes("aug")) dataArt = '8';
+            else if(dataArt.includes("sep")) dataArt = '9';
+            else if(dataArt.includes("oct")) dataArt = '10';
+            else if(dataArt.includes("nov")) dataArt = '11';
+            else if(dataArt.includes("dec")) dataArt = '12';
+            else if(dataArt.includes("jan")) dataArt = '1';
+            else if(dataArt.includes("feb")) dataArt = '2';
+            console.log(dataArt);
+            let valData = document.getElementById("inp-luna").value;
+            var selected = [];
+            for (var option of document.getElementById('inp-luna').options)
+            {
+                if (option.selected) {
+                    selected.push(option.value);
+                }
+            }
+            console.log(selected);
+
+            let conditie5 = selected.includes(dataArt);
+            console.log(conditie5)
+
+            let disccoloratArt = art.getElementsByClassName("val-disc_colorat")[0].innerHTML;
+            if (disccoloratArt == "true") disccoloratArt = true;
+            else disccoloratArt = false;
+            let valDiscColorat = document.getElementById("inp-disc-colorat").checked;
+            
+            let conditie6 = disccoloratArt == valDiscColorat || valDiscColorat == false;
+            console.log(disccoloratArt);
+            console.log(valDiscColorat);
+            console.log(conditie6);
 
             // var conditie3=false;
             // switch (valDimensiune){
@@ -67,8 +105,23 @@ window.addEventListener("DOMContentLoaded", function(){
             // var selCateg=document.getElementById("inp-categorie");
             // var conditie4= (art.getElementsByClassName("val-categorie")[0].innerHTML == selCateg.value ||  selCateg.value=="toate");
 
+            var desc=art.getElementsByClassName("val-descriere")[0];
+            console.log(desc.innerHTML.toLowerCase());
+            console.log(document.getElementById("inp-descriere").value.toLowerCase());
+            var conditie7=desc.innerHTML.toLowerCase().includes(document.getElementById("inp-descriere").value.toLowerCase().trim()) || document.getElementById("inp-descriere").value.toLowerCase().trim().includes("Introdu descrierea");
+            
+            console.log(conditie7);
 
-            if(conditie1 && conditie2 && conditie3 && conditie4)
+            var genuri = art.getElementsByClassName("val-genuri")[0];
+            console.log(genuri.innerHTML.toLowerCase());
+            var valGenuri = document.getElementById("input-genuri").value.toLowerCase();
+            console.log(valGenuri);
+            
+            var conditie8 = genuri.innerHTML.toLowerCase().includes(valGenuri);
+            console.log(conditie8);
+
+
+            if(conditie1 && conditie2 && conditie3 && conditie4 && conditie5 && conditie6 && conditie7 && conditie8)
                 art.style.display="block";
             
         }
@@ -91,8 +144,8 @@ window.addEventListener("DOMContentLoaded", function(){
         var articole=document.getElementsByClassName("produs");
         var v_articole=Array.from(articole);
         v_articole.sort(function(a,b){
-            var nume_a=a.getElementsByClassName("val-nume")[0].innerHTML;
-            var nume_b=b.getElementsByClassName("val-nume")[0].innerHTML;
+            var nume_a=a.getElementsByClassName("val-artist")[0].innerHTML;
+            var nume_b=b.getElementsByClassName("val-artist")[0].innerHTML;
             if(nume_a!=nume_b){
                 return semn*nume_a.localeCompare(nume_b);
             }
@@ -180,22 +233,27 @@ window.addEventListener("DOMContentLoaded", function(){
  window.onkeydown=function(e){
     console.log(e);
     if(e.key=="c" && e.altKey==true){
-        var suma=0;
-        var articole=document.getElementsByClassName("produs");
-        for(let art of articole){
-            if(art.style.display!="none")
-                suma+=parseFloat(art.getElementsByClassName("val-pret")[0].innerHTML);
+        if(!document.getElementById("psuma")){
+            var suma=0;
+            var articole=document.getElementsByClassName("produs");
+            for(let art of articole){
+                if(art.style.display!="none")
+                    suma+=parseFloat(art.getElementsByClassName("val-pret")[0].innerHTML);
+            }
+    
+            var pSuma = document.createElement("p");
+            pSuma.id = "psuma";
+            pSuma.innerHTML="<b>Suma: </b>"+suma;
+            var sectiune = document.getElementById("produse");
+            sectiune.parentElement.insertBefore(pSuma, sectiune);
+            setTimeout(function(){
+                let p = document.getElementById("psuma");
+                if(p){
+                    p.remove();
+                }
+            }, 5000)
         }
-
-        var spanSuma;
-        spanSuma=document.getElementById("numar-suma");
-        if(!spanSuma){
-            spanSuma=document.createElement("span");
-            spanSuma.innerHTML=" Suma:"+suma;//<span> Suma:...
-            spanSuma.id="numar-suma";//<span id="..."
-            document.getElementById("p-suma").appendChild(spanSuma);
-            setTimeout(function(){document.getElementById("numar-suma").remove()}, 1500);
-        }
+        
     }
 
 

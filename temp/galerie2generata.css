@@ -2,20 +2,20 @@
   margin: 0;
   padding: 0;
   display: grid;
-  width: 1200px;
+  width: 900px;
   grid-row-gap: 0;
   grid-column-gap: 0;
   position: absolute;
   top: 0;
   left: 0;
-  animation-name: gal2_16;
-  animation-duration: 36s;
+  animation-name: gal2_9;
+  animation-duration: 28s;
   animation-direction: alternate;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-duration: 28s;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 #galerie2 .grid_2col:hover {
   animation-play-state: paused;

@@ -4,6 +4,10 @@ main{
     padding-right:var(--padd-main);
 }
 
+#wrapper_prod{
+    display: flex;
+}
+
 .grid-produse{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -36,27 +40,89 @@ main{
 .grid-produse .produs figure img{
     border:1px solid grey
 }
-.grid-produse .produs .info-prod{
+/* .grid-produse .produs .info-prod{
     display:flex;
-    /* background-color: var(--cl-marcare); */
+    /* background-color: var(--cl-marcare); 
+} */
+
+.artist{
+    font-weight: bold;
 }
-.grid-produse .produs .info-prod p{
+
+.genuri{
+    font-weight: bold;
+}
+
+.descriere{
+    font-weight: bold;
+}
+
+.disc_colorat{
+    font-weight: bold;
+}
+
+.dimensiune{
+    font-weight: bold;
+}
+
+.data{
+    font-weight: bold;
+} */
+
+ .val-artist{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.val-genuri{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.val-descriere{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.val-disc_colorat{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.val-dimensiune{
+    font-style: italic;
+    font-weight: normal;
+}
+
+.val-data{
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* .grid-produse .produs .info-prod p{
     width:30%;
     text-align:center;
     font-weight:bold;
 }
-
+*/
 .grid-produse .produs p.categorie{
 
     text-align:center;
     font-weight:bold;
-}
+} 
+
+ .grid-produse .produs p.pret{
+
+    text-align:center;
+    font-weight:bold;
+} 
 
 .info-produse{
     /* background-color: var(--cl-marcare); */
     padding:0.2rem;
     box-shadow: 0px 0px 0.5rem 0.15rem;
 }
+
 
 .produs{
     position: relative;
