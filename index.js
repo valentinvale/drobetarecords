@@ -9,7 +9,10 @@ const formidable = require("formidable");
 const crypto = require("crypto");
 const session = require("express-session")
 const res = require("express/lib/response");
-var client = new Client({user:"user_test", password:"parola", database:"drobetarecords", host:"localhost", port:5432});
+//var client = new Client({user:"user_test", password:"parola", database:"drobetarecords", host:"localhost", port:5432});
+var client = new Client({user:"jrkoqjnvfggbwq", password:"bfa56fd6812c9471af90887d606b692e738ef2f46f3c629973b942d8ceb5e714", database:"ddvj3rr7p063md", host:"ec2-3-230-122-20.compute-1.amazonaws.com", port:5432, ssl: {
+    rejectUnauthorized: false
+  }});
 client.connect();
 client.query("select * from drobetarecords", function(err, rezQuery){
     console.log(rezQuery);
