@@ -225,8 +225,8 @@ function randeazaEroare(res, identificator, status, titlu, text, imagine){
 
 creeazaErori();
 
-// var s_port=process.env.PORT || 5000;
-// app.listen(s_port);
+ var s_port=process.env.PORT || 5000;
+ app.listen(s_port);
 
-app.listen(8080);
+//app.listen(8080);
 console.log("A pornit")
