@@ -7,6 +7,7 @@
     else
         document.body.classList.remove("dark");
         </script>
+        <button id="btn_tema"><i class="fas fa-sun" id="pic_tema"></i></button>
         <h1 id="titlusite">Drobeta Records</h1>
         <q><small>Music is the closest thing to a time machine</small></q>
         <div id="navbar">
@@ -22,9 +23,6 @@
                             <li><a href="/index#produsepopulare">Populare</a></li>
                             <li><a href="/index#noutati">Noutati</a></li>
                         </ul>   
-                    </li>
-
-                    <li class="liAcasa"><a href="/inreg">Înregistrare</a>
                     </li>
 
                     <li><a href="/viniluri">Viniluri</a>
@@ -52,8 +50,39 @@
                         </ul>
                     </li>
 
+                    <li class="liAcasa"><a href="/inreg">Înregistrare</a>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                    <% if(locals.utilizator) { %>
+                        <li><div><%- locals.utilizator.username %></div>
+                            <ul>
+                                <li><a href="/profil">Profil</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+
                 </ul>
             </nav>
+        </div>
+        <div>
+        <% if(!locals.utilizator) { %>    
+        <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+            <p>
+                <label>
+                    Username: <input type="text" name="username" id="inp-username" value="prof<%= Math.floor(Math.random()*100000) %>" required pattern="[A-Za-z0-9]+">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Parola: <input id="parl" type="password" required  name="parola" value="">
+                </label>
+            </p>
+            <p>
+                <input type="submit" value="Logare">
+            </p>
+        </form>
+        <% } %>
         </div>
     </header>
 

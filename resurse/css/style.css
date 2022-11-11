@@ -5,6 +5,7 @@ html{
     --highlightColor:#4540DB;
     --borderColor:#3531A8;
     --gridAreaColor:#bbb9f0;
+    --shadowColor:white;
     --marginMain: 70px;
 }
 
@@ -28,11 +29,12 @@ body{
 
 body.dark{
     --bgColor:black;
-    --textColor:#37365C;
+    --textColor:#c2c1d5;
     --headerColor:#1D1B5C;
     --highlightColor:#4540DB;
     --borderColor:#3531A8;
-    --gridAreaColor:#bbb9f0;
+    --gridAreaColor:#343257;
+    --shadowColor:#3531A8;
     --marginMain: 70px;
     background-color: var(--bgColor);
 

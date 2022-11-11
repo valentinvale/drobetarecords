@@ -34,10 +34,40 @@ window.addEventListener("DOMContentLoaded", function(){
             var pret=art.getElementsByClassName("val-pret")[0]
             var conditie3=parseInt(pret.innerHTML) > parseInt(document.getElementById("inp-pret").value);
 
+            function sorteazajuc(semn){
+                var articole=document.getElementsByClassName("produs");
+                var v_articole=Array.from(articole);
+                v_articole.sort(function(a,b){
+                    var varsta_a=a.getElementsByClassName("varsta-val")[0].innerHTML;
+                    var varsta_b=b.getElementsByClassName("varsta-val")[0].innerHTML;
+                    if(varsta_a!=varsta_b){
+                        return semn*varsta_a.localeCompare(varsta_b);
+                    }
+                    else{
+                        
+                        var pret_a=parseInt(a.getElementsByClassName("val-pret")[0].innerHTML);
+                        var pret_b=parseInt(b.getElementsByClassName("val-pret")[0].innerHTML);
+                        return semn*(pret_a-pret_b);
+                    }
+                });
+                for(let art of v_articole){
+                    art.parentNode.appendChild(art);
+                }
+            }
+
             var radbtns=document.getElementsByName("gr_rad");
             for (let rad of radbtns){
                 if (rad.checked){
-                    var valDimensiune=rad.value;//poate fi 1, 2 sau 3
+                    var valDimensiune=rad.value;
+                    if(valDimensiune=="cresc")
+                    {
+                        sorteazajuc(1);
+                    }
+
+                    else if(valDimensiune=="desc")
+                    {
+                        sorteazajuc(-1);
+                    }
                     break;
                 }
             }

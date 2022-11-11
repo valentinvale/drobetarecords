@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        <link rel="stylesheet" href="/resurse/css/jucarii.css"/>
+        <script src="/resurse/js/jucarii.js"></script>
+        <title>Drobeta Records - home</title>
+        <%- include("../fragmente/head") %>     
+        <!-- <script type="text/javascript" src=/resurse/js/produse.js></script> -->
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+
+        <div> Sortare:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p><label>Crescator
+                <input id="i_rad1"  name="gr_rad" value="cresc" type="radio"/>
+            </label></p>
+            <p><label>Descrescator 
+                <input id="i_rad2"  name="gr_rad" value="desc" type="radio"/>
+            </label>
+        </div>
+        <button id="filtrare">Filtreaza</button>
+
+        <div class="grid">
+            <% for( let prod of locals.jucarii) { %>
+                <section class="produs">
+                    <h2 class="jucarie"><%- prod.id%>.<%- prod.nume[0].toUpperCase()+prod.nume.substring(1)%></h2>
+                    <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                    <p>recomandat copiilor cu varsta mai mare decat <span class="varsta-val"><%- prod.varsta_minima%></span> ani</p>       
+                    <% if(prod.varsta_minima < 2){ %> 
+                        <p>potrivit pentru bebelusi si disponibil in <%-prod.culori.length%> culori:</p> <% }
+
+                    else{ 
+                    %>
+                        <p>Disponibil in <%-prod.culori.length%> culori:</p> 
+                        <% } %>
+                        <ol style="list-style-type:lower-alpha">
+                            <% for(let culoare of prod.culori){ %>
+                                <li><%-culoare[0].toUpperCase() + culoare.substring(1)%></li>
+                            <% } %>    
+                        </ol>
+                </section>
+                    <% } %>
+                </div>                        
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

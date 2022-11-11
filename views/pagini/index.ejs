@@ -5,7 +5,7 @@
     <meta name="keywords" content="vinil, muzică, rock, punk, cd">
     <meta name="descriptions" content="Magazin de muzică. Viniluri si CD-uri">
     <title>Drobeta Records - home</title>
-    <button id="btn_tema">Schimba Tema</button>
+    <!-- <button id="btn_tema"><i class="fas fa-sun" id="pic_tema"></i></button> -->
     
     <%- include("../fragmente/head.ejs"); 
     %>
@@ -44,7 +44,30 @@
                     </figure>
                 </div>
 
-                <button id="btn_tema">Schimba Tema</button>
+                <% if(locals.utilizator){ %>
+                
+                
+
+                <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+                    <p>
+                        <label>
+                            Username: <input type="text" name="username" id="inp-username" value="prof<%= Math.floor(Math.random()*100000) %>" required pattern="[A-Za-z0-9]+">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Parola: <input id="parl" type="password" required  name="parola" value="">
+                        </label>
+                    </p>
+
+                    <p>
+                        <input type="submit" value="Logare">
+                    </p>
+                </form>
+
+                <% } %>
+
+                
 
                 <div id="utilizatori" class="areaCuBackDif">
                     <p>PLACEHOLDER UTILIZATORI.</p>

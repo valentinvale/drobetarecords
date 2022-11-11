@@ -1,0 +1,36 @@
+cos-virtual.css
+Cine are acces
+I
+Proprietățile sistemului
+Tip
+Foaie de stil
+Mărime
+259 de byți
+Spațiu de stocare utilizat
+259 de byți
+Locație
+css
+Proprietar
+Irina Ciocan
+Modificat la
+12 iun. 2021 de Irina Ciocan
+Data creării
+17:17
+Nicio descriere
+Cititorii pot descărca
+.cos-virtual{
+    margin-bottom: 0.7rem;
+    display: flex;
+    width: 100%;
+}
+.cos-virtual>:nth-child(1){
+    width:25%;
+}
+.cos-virtual>:nth-child(1) img{
+    width:100%;
+}
+
+.cos-virtual>:nth-child(2){
+    padding-left:0.5rem;
+    width:25%;
+}
